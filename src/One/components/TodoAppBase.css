@@ -1,0 +1,246 @@
+.todo-app-base {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.control-panel {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+
+.add-todo-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-sort-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .add-todo-section,
+  .search-sort-section {
+    flex-direction: column;
+  }
+}
+
+.todo-input,
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.todo-input:focus,
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.todo-input:disabled,
+.search-input:disabled {
+  background-color: #f8f9fa;
+  opacity: 0.7;
+}
+
+.add-button,
+.sort-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-button {
+  background-color: #28a745;
+  color: white;
+  min-width: 100px;
+}
+
+.add-button:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.add-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sort-button {
+  background-color: #6c757d;
+  color: white;
+  min-width: 120px;
+}
+
+.sort-button.active {
+  background-color: #007bff;
+}
+
+.sort-button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.sort-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.clear-search-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.clear-search-button:hover {
+  color: #dc3545;
+}
+
+.stats {
+  background: #e9ecef;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #495057;
+  font-weight: 500;
+  text-align: center;
+}
+
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.app-loading p {
+  font-size: 18px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.retry-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: #c82333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-app-base {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.add-button,
+.sort-button,
+.clear-search-button {
+  transition: all 0.2s ease;
+}
+
+.add-button:active:not(:disabled),
+.sort-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.todo-input:focus-visible,
+.search-input:focus-visible,
+.add-button:focus-visible,
+.sort-button:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.todo-app-base * {
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+}

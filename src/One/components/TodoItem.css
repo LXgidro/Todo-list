@@ -1,0 +1,160 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  min-height: 35px;
+  background: #677ce6;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  border-color: #686868;
+  border-width: 2px;
+}
+
+.todo-item.completed {
+  background: #764ea6;
+  opacity: 0.8;
+  border-color: #28a745;
+  border-width: 2px;
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: #ffffff;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.todo-checkbox:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.todo-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+}
+
+.todo-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.todo-item:hover .todo-actions {
+  opacity: 1;
+}
+
+.action-button {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.action-button.edit {
+  background-color: #ffd145;
+  color: white;
+}
+
+.action-button.delete {
+  background-color: #ff4f4f;
+  color: white;
+}
+
+.action-button.save {
+  background-color: #35b900;
+  color: white;
+}
+
+.action-button.save:hover {
+  background: #00a827;
+}
+
+.action-button.cancel {
+  background-color: #464646;
+  color: white;
+}
+
+.action-button.cancel:hover {
+  background: #2c2c2c;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+}
+
+.action-button.edit:hover {
+  background: rgb(255, 196, 0);
+}
+
+.action-button.delete:hover {
+  background: rgb(255, 15, 35);
+}
+
+.edit-input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 2px solid #764ca4;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #764ca4;
+  box-shadow: 0 0 0 1px rgba(0, 123, 255, 0.25);
+}
+
+.todo-status {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.todo-status.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.todo-status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
